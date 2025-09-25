@@ -1,0 +1,148 @@
+<mujoco model="ant">
+  <compiler angle="degree" coordinate="global" inertiafromgeom="true"/>
+  <option integrator="RK4" timestep="0.01"/>
+  <default>
+    <joint armature="1" damping="1" limited="true"/>
+    <geom conaffinity="0" condim="3" density="5.0" friction="1 0.5 0.5" margin="0.01" rgba=".98 .54 .56 1."/>
+  </default>
+  <visual>
+    <headlight ambient=".1 .1 .1" diffuse=".6 .6 .6" specular="0.3 0.3 0.3"/>
+    <map znear=".01"/>
+    <quality shadowsize="16384"/>
+  </visual>
+  <worldbody>
+    <light cutoff="100" diffuse="1 1 1" dir="-0 0 -1.3" directional="true" exponent="1" pos="0 0 1.3" specular=".1 .1 .1"/>
+    <geom conaffinity="1" condim="3" name="floor" pos="0 0 0" rgba="0.8 0.9 0.8 1" size="200 200 .125" type="plane" material="grid_new"/>
+    <body name="0" pos="0 0 0">
+      <camera name="track" mode="trackcom" pos="0 -3 0.3" xyaxes="1 0 0 0 0 1"/>
+      <geom pos="0 0 0" size="0.25" type="sphere"/>
+      <joint armature="0" damping="0" limited="false" margin="0.01" name="0_joint" pos="0 0 0" type="free"/>
+      <body name="1" pos="0 0 0">
+        <joint axis="-0.707107 0.707107 0" name="1_joint" pos="0 0 0" range="-30 30" type="hinge"/>
+        <geom fromto="-0.002207 -0.002693 0 0.409794 0.5 0" size="0.099998" type="capsule"/>
+        <body name="11" pos="0.409794 0.5 0">
+          <joint axis="-0.707107 0.707107 0" name="11_joint" pos="0.409794 0.5 0" range="-30 30" type="hinge"/>
+          <geom fromto="0.409782 0.499987 0 0.840451 0.965026 0" size="0.085475" type="capsule"/>
+          <body name="111" pos="0.840451 0.965026 0">
+            <joint axis="-0.707107 0.707107 0" name="111_joint" pos="0.840451 0.965026 0" range="-30 30" type="hinge"/>
+            <geom fromto="0.8228 0.947223 0 1.329654 1.458434 0" size="0.095718" type="capsule"/>
+          </body>
+          <body name="211" pos="0.840451 0.965026 0">
+            <joint axis="-0.707107 0.707107 0" name="211_joint" pos="0.840451 0.965026 0" range="-30 30" type="hinge"/>
+            <geom fromto="0.840422 0.964969 0 1.083403 1.444179 0" size="0.080426" type="capsule"/>
+          </body>
+        </body>
+        <body name="21" pos="0.409794 0.5 0">
+          <joint axis="-0.707107 0.707107 0" name="21_joint" pos="0.409794 0.5 0" range="-30 30" type="hinge"/>
+          <geom fromto="0.408563 0.499013 0 0.909117 0.900348 0" size="0.091289" type="capsule"/>
+          <body name="121" pos="0.909117 0.900348 0">
+            <joint axis="-0.707107 0.707107 0" name="121_joint" pos="0.909117 0.900348 0" range="-30 30" type="hinge"/>
+            <geom fromto="0.908609 0.899652 0 1.265311 1.388319 0" size="0.059477" type="capsule"/>
+          </body>
+        </body>
+      </body>
+      <body name="2" pos="0 0 0">
+        <joint axis="-0.707107 -0.707107 0" name="2_joint" pos="0 0 0" range="-30 30" type="hinge"/>
+        <geom fromto="0.000114 -0.000108 0 -0.491759 0.468222 0" size="0.09501" type="capsule"/>
+        <body name="12" pos="-0.491759 0.468222 0">
+          <joint axis="-0.707107 -0.707107 0" name="12_joint" pos="-0.491759 0.468222 0" range="-30 30" type="hinge"/>
+          <geom fromto="-0.490445 0.465305 0 -0.714123 0.962078 0" size="0.076048" type="capsule"/>
+          <body name="112" pos="-0.714123 0.962078 0">
+            <joint axis="-0.707107 -0.707107 0" name="112_joint" pos="-0.714123 0.962078 0" range="-30 30" type="hinge"/>
+            <geom fromto="-0.70721 0.957302 0 -1.163053 1.272258 0" size="0.080379" type="capsule"/>
+          </body>
+          <body name="212" pos="-0.714123 0.962078 0">
+            <joint axis="-0.707107 -0.707107 0" name="212_joint" pos="-0.714123 0.962078 0" range="-30 30" type="hinge"/>
+            <geom fromto="-0.714078 0.961421 0 -0.745007 1.416864 0" size="0.074076" type="capsule"/>
+          </body>
+        </body>
+        <body name="22" pos="-0.491759 0.468222 0">
+          <joint axis="-0.707107 -0.707107 0" name="22_joint" pos="-0.491759 0.468222 0" range="-30 30" type="hinge"/>
+          <geom fromto="-0.491309 0.467737 0 -0.893181 0.900908 0" size="0.084451" type="capsule"/>
+        </body>
+      </body>
+      <body name="3" pos="0 0 0">
+        <joint axis="0.707107 -0.707107 0" name="3_joint" pos="0 0 0" range="-30 30" type="hinge"/>
+        <geom fromto="0.004682 0.00525 0 -0.44562 -0.499611 0" size="0.079507" type="capsule"/>
+        <body name="13" pos="-0.44562 -0.499611 0">
+          <joint axis="0.707107 -0.707107 0" name="13_joint" pos="-0.44562 -0.499611 0" range="-30 30" type="hinge"/>
+          <geom fromto="-0.44562 -0.499611 0 -0.626848 -0.967656 0" size="0.076023" type="capsule"/>
+          <body name="113" pos="-0.626848 -0.967656 0">
+            <joint axis="0.707107 -0.707107 0" name="113_joint" pos="-0.626848 -0.967656 0" range="-30 30" type="hinge"/>
+            <geom fromto="-0.613332 -0.951576 0 -0.972652 -1.379064 0" size="0.086148" type="capsule"/>
+          </body>
+          <body name="213" pos="-0.626848 -0.967656 0">
+            <joint axis="0.707107 -0.707107 0" name="213_joint" pos="-0.626848 -0.967656 0" range="-30 30" type="hinge"/>
+            <geom fromto="-0.626625 -0.967457 0 -1.068129 -1.360197 0" size="0.083934" type="capsule"/>
+          </body>
+        </body>
+        <body name="23" pos="-0.44562 -0.499611 0">
+          <joint axis="0.707107 -0.707107 0" name="23_joint" pos="-0.44562 -0.499611 0" range="-30 30" type="hinge"/>
+          <geom fromto="-0.445545 -0.49955 0 -0.88464 -0.858726 0" size="0.08038" type="capsule"/>
+        </body>
+      </body>
+      <body name="4" pos="0 0 0">
+        <joint axis="0.707107 0.707107 0" name="4_joint" pos="0 0 0" range="-30 30" type="hinge"/>
+        <geom fromto="-0.003067 0.004055 0 0.372038 -0.491787 0" size="0.087358" type="capsule"/>
+        <body name="14" pos="0.372038 -0.491787 0">
+          <joint axis="0.707107 0.707107 0" name="14_joint" pos="0.372038 -0.491787 0" range="-30 30" type="hinge"/>
+          <geom fromto="0.372038 -0.491787 0 0.853322 -0.977708 0" size="0.09249" type="capsule"/>
+          <body name="114" pos="0.853322 -0.977708 0">
+            <joint axis="0.707107 0.707107 0" name="114_joint" pos="0.853322 -0.977708 0" range="-30 30" type="hinge"/>
+            <geom fromto="0.853248 -0.977631 0 1.305322 -1.455765 0" size="0.07196" type="capsule"/>
+          </body>
+          <body name="214" pos="0.853322 -0.977708 0">
+            <joint axis="0.707107 0.707107 0" name="214_joint" pos="0.853322 -0.977708 0" range="-30 30" type="hinge"/>
+            <geom fromto="0.853321 -0.977708 0 1.233488 -1.418788 0" size="0.082271" type="capsule"/>
+          </body>
+        </body>
+        <body name="24" pos="0.372038 -0.491787 0">
+          <joint axis="0.707107 0.707107 0" name="24_joint" pos="0.372038 -0.491787 0" range="-30 30" type="hinge"/>
+          <geom fromto="0.372003 -0.491744 0 0.771789 -0.986903 0" size="0.095728" type="capsule"/>
+          <body name="124" pos="0.771789 -0.986903 0">
+            <joint axis="0.707107 0.707107 0" name="124_joint" pos="0.771789 -0.986903 0" range="-30 30" type="hinge"/>
+            <geom fromto="0.769564 -0.984971 0 1.257387 -1.408519 0" size="0.078788" type="capsule"/>
+          </body>
+          <body name="224" pos="0.771789 -0.986903 0">
+            <joint axis="0.707107 0.707107 0" name="224_joint" pos="0.771789 -0.986903 0" range="-30 30" type="hinge"/>
+            <geom fromto="0.770279 -0.98564 0 1.134715 -1.290616 0" size="0.071504" type="capsule"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="1_joint" gear="142.102568" name="1_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="2_joint" gear="65.032707" name="2_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="3_joint" gear="31.271844" name="3_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="4_joint" gear="126.794554" name="4_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="11_joint" gear="83.342056" name="11_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="12_joint" gear="43.332632" name="12_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="13_joint" gear="44.27283" name="13_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="14_joint" gear="128.625959" name="14_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="21_joint" gear="20.010501" name="21_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="22_joint" gear="170.927336" name="22_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="23_joint" gear="207.555287" name="23_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="24_joint" gear="65.46036" name="24_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="111_joint" gear="30.603532" name="111_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="112_joint" gear="95.134084" name="112_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="113_joint" gear="54.23908" name="113_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="114_joint" gear="89.198251" name="114_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="211_joint" gear="20.156801" name="211_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="213_joint" gear="117.649704" name="213_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="214_joint" gear="99.797004" name="214_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="121_joint" gear="104.07004" name="121_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="124_joint" gear="103.194975" name="124_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="224_joint" gear="95.351077" name="224_joint"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="212_joint" gear="119.254694" name="212_joint"/>
+  </actuator>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1=".4 .5 .6" rgb2="0 0 0" width="100" height="100"/>
+    <texture builtin="flat" height="1278" mark="cross" markrgb="1 1 1" name="texgeom" random="0.01" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" type="cube" width="127"/>
+    <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100"/>
+    <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
+    <material name="geom" texture="texgeom" texuniform="true"/>
+    <texture name="grid_new" type="2d" builtin="checker" rgb1=".1 .3 .2" rgb2=".2 .4 .3" width="1000" height="1000" mark="none" markrgb=".8 .6 .4"/>
+    <material name="grid_new" texture="grid_new" texrepeat="0.2 0.2" texuniform="true" reflectance=".2"/>
+  </asset>
+</mujoco>
