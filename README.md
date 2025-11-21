@@ -103,3 +103,13 @@ python openevolve-run.py \
   --config ../openevolve/examples/design_opt_rl_swimmer/config.yaml \
   --iterations 100
 ```
+
+
+## Visualization
+| Method | Visualization |
+|-------|-----|
+| T2A   | ![Ant](assets/ant_t2a.gif) |
+| MorphoGen  | ![Ours](assets/ant_ours.gif) |
+
+
+More visualizations of the locomotion are coming soon...
