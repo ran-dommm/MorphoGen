@@ -3,13 +3,11 @@
 MorphoGen is an LLM-driven framework for robot morphology optimization that directly evolves MuJoCo XML genotypes. It integrates a powerful evolutionary coding agent (OpenEvolve) with a fast RL-based controller optimization stack (Transform2Act), enabling end-to-end design of robot bodies and controllers without restricting creativity to predefined graph edits.
 
 
-| Method | Ant | Swimmer |
-|-------|-----|-|
-| T2A   | ![T2A](assets/ant_t2a.gif) | ![T2A](assets/swimmer_t2a.gif) |
-| MorphoGen  | ![Ours](assets/ant_ours.gif) | ![Ours](assets/swimmer_ours.gif) |
+| Method | Ant | Swimmer | Gap |
+|-------|-----|-|-|
+| T2A   | ![T2A](assets/ant_t2a.gif) | ![T2A](assets/swimmer_t2a.gif) | ![T2A](assets/gap_t2a.gif) |
+| MorphoGen  | ![Ours](assets/ant_ours.gif) | ![Ours](assets/swimmer_ours.gif) | ![Ours](assets/gap_ours.gif) |
 
-
-More visualizations of the locomotion are coming soon...
 
 ## Introduction
 
